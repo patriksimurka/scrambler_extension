@@ -52,8 +52,12 @@ function shuffle(s) {
   return s;                        
 }
 
-if (chrome.storage.local.get() === true) {
+let bgpage = chrome.extension.getBackgroundPage();
+let state = bgpage.state;
+
+if (state === 'on'){
 	replaceAllWords();
 }
+
 
 
