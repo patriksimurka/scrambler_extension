@@ -52,10 +52,22 @@ function shuffle(s) {
   return s;                        
 }
 
-let bgpage = chrome.extension.getBackgroundPage();
-let state = bgpage.state;
 
-if (state === 'on'){
+/* if( document.readyState !== 'loading' ) {
+	console.log('pica')
+    chrome.runtime.sendMessage({
+        type: "getText"
+    }).then(function(message) {
+        var state = message.result;
+        console.log(state);
+    });
+};
+*/
+
+var state = localStorage.getItem("state");
+console.log(state)
+
+if (!(state === 'off' || state == undefined)){
 	replaceAllWords();
 }
 
