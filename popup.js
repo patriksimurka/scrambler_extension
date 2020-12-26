@@ -1,12 +1,14 @@
-var message = localStorage.getItem("state");
-
-if(message === null) {
-	message = 'off';
-};
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+	var message = localStorage.getItem("state");
+	console.log(message);
+	if(message === null) {
+		message = 'off';
+	};
+
 
 	if (message === 'on') {
 		document.getElementById('check').checked = true;
@@ -45,4 +47,4 @@ function receiver(request, sender, sendResponse) {
     };
 };
 
-console.log(message);
+localStorage.setItem("state", localStorage.getItem('state'));
