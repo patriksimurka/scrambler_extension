@@ -69,7 +69,7 @@ chrome.runtime.sendMessage({
     console.log(state);
 });*/
 
-var delayInMilliseconds = 100; 
+var delayInMilliseconds = 50; 
 
 setTimeout(function() {
   if (!( state == undefined || state === 'off')){

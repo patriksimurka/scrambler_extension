@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var check_box = document.getElementById('check');
 	check_box.addEventListener('change', function() {
+
+		document.getElementById('refresh').addEventListener('click', function() {
+			chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        		chrome.tabs.update(tabs[0].id, {url: tabs[0].url});
+    		});
+		});
+
+		document.getElementById('refresh').style.display = 'block';
+
 		if (check_box.checked) {
 			
 			var message = 'on';
