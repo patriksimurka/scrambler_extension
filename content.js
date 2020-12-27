@@ -1,3 +1,4 @@
+
 function replaceAllWords() {
     for (var i = 0; i < document.childNodes.length; i++) {
         checkNode(document.childNodes[i]);
@@ -52,24 +53,34 @@ function shuffle(s) {
   return s;                        
 }
 
+var state = 'off'
 
-/* if( document.readyState !== 'loading' ) {
-	console.log('pica')
-    chrome.runtime.sendMessage({
-        type: "getText"
-    }).then(function(message) {
-        var state = message.result;
-        console.log(state);
-    });
-};
-*/
+chrome.runtime.onMessage.addListener(receiver);
 
-var state = localStorage.getItem("state");
-console.log(state)
-
-if (!(state === 'off' || state == undefined)){
-	replaceAllWords();
+function receiver(request, sender, sendResponse) {
+	state = request;
+	console.log(state);
 }
+
+chrome.runtime.sendMessage({
+    type: "getText"
+})/*.then(function(message) {
+    var state = message.result;
+    console.log(state);
+});*/
+
+var delayInMilliseconds = 100; 
+
+setTimeout(function() {
+  if (!( state == undefined || state === 'off')){
+replaceAllWords();
+}
+
+}, delayInMilliseconds);
+
+
+
+
 
 
 
