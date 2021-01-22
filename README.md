@@ -1,1 +1,1 @@
-Supposedly beneficial for verbal ability (in my defense).
+Supposedly beneficial for verbal ability (in my defence).
