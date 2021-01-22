@@ -59,7 +59,6 @@ chrome.runtime.onMessage.addListener(receiver);
 
 function receiver(request, sender, sendResponse) {
 	state = request;
-	console.log(state);
 }
 
 chrome.runtime.sendMessage({
