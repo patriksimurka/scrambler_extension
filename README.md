@@ -1,1 +1,1 @@
-A chrome extension that scrambles all words on a website
+Supposedly beneficial for verbal ability (in my defense).
