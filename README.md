@@ -1,1 +1,1 @@
-A chrome extension that scrables all words on a website
+A chrome extension that scrambles all words on a website
